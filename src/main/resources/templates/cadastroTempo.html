@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Hello Spring Boot</title>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+		rel="stylesheet"/>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+		rel="stylesheet"/>
+	</head>
+	<body>		
+		<div class="panel panel-default" style="margin: 10px">			
+			<div class="panel-heading">
+				<h1 class="panel-title">Previsao do tempo</h1>
+			</div>
+			<div class="panel-body">
+				<form class="form-inline" method="post" th:object="${tempo}" th:action="@{/cadastro}" style="margin: 20px 0">
+					<div class="form-group">
+					<input type="text" class="form-control" placeholder="dia da semana" th:field="*{diasemana}"/>
+					<input type="text" class="form-control" placeholder="descricao" th:field="*{descricao}"/>
+					<input type="text" class="form-control" placeholder="Temperatura minima" th:field="*{tempmini}"/>
+					<input type="text" class="form-control" placeholder="temperatura maxima" th:field="*{tempmaxi}"/>
+					<input type="text" class="form-control" placeholder="humidade" th:field="*{humidade}"/>
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>dia da semana</th>
+							<th>descrição</th>
+							<th>Temperatura minima</th>
+							<th>Temperatura maxima</th>
+							<th>humidade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="tempo : ${tempos}">
+							<td th:text="${tempo.diasemana}"></td>
+							<td th:text="${tempo.descricao}"></td>
+							<td th:text="${tempo.tempmini}"></td>
+							<td th:text="${tempo.tempmaxi}"></td>
+							<td th:text="${tempo.humidade}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
