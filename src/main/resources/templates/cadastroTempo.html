@@ -22,6 +22,9 @@
 					<input type="text" class="form-control" placeholder="Temperatura minima" th:field="*{tempmini}"/>
 					<input type="text" class="form-control" placeholder="temperatura maxima" th:field="*{tempmaxi}"/>
 					<input type="text" class="form-control" placeholder="humidade" th:field="*{humidade}"/>
+					<input type="text" class="form-control" placeholder="Data e hora" th:field="*{data_hora}"/>
+					<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}"/>
+					<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}"/>
 					<button type="submit" class="btn btn-primary">Adicionar</button>
 					</div>
 				</form>
@@ -33,6 +36,9 @@
 							<th>Temperatura minima</th>
 							<th>Temperatura maxima</th>
 							<th>humidade</th>
+							<th>data e hora</th>
+							<th>Latitude</th>
+							<th>Longitude</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -42,6 +48,9 @@
 							<td th:text="${tempo.tempmini}"></td>
 							<td th:text="${tempo.tempmaxi}"></td>
 							<td th:text="${tempo.humidade}"></td>
+							<td th:text="${tempo.data_hora}"></td>
+							<td th:text="${tempo.latitude}"></td>
+							<td th:text="${tempo.longitude}"></td>
 						</tr>
 					</tbody>
 				</table>

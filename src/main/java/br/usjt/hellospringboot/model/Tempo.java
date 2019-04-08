@@ -20,6 +20,40 @@ public class Tempo implements Serializable{
 	private Double tempmini;
 	private Double tempmaxi;
 	private Double humidade;
+	private String data_hora;
+	private String latitude;
+	private String longitude;
+	
+
+
+	public String getData_hora() {
+		return data_hora;
+	}
+
+
+	public void setData_hora(String data_hora) {
+		this.data_hora = data_hora;
+	}
+
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 
 
 	public Long getId() {
